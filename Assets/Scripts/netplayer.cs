@@ -29,8 +29,7 @@ public class netplayer : NetworkBehaviour {
     [Command]
     void CmdSpawn2()
     {
-        
-           GameObject go = Instantiate(Resources.Load("Wolf", typeof(GameObject))) as GameObject;
+        GameObject go = Instantiate(Resources.Load("Wolf", typeof(GameObject))) as GameObject;
         transform.position = new Vector3(0, 0, 0);
         NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
     }

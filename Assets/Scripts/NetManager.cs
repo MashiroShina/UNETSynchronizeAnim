@@ -49,24 +49,14 @@ public class NetManager : NetworkManager {
         }
         // base.OnServerAddPlayer(conn, playerControllerId, extraMessageReader);
     }
+
     public override void OnClientConnect(NetworkConnection conn)
     {
         Debug.Log("点击连接按钮时LANCLient调用");
         NetworkMessage test = new NetworkMessage();
         test.chosenClass = chosenCharacter;
-        ClientScene.AddPlayer(conn, 0, test);//把自己的conn传递给服务端
+        ClientScene.AddPlayer(conn, 0, test); //把自己的conn传递给服务端
         //AddPlayer 这会将AddPlayer消息发送到服务器，并调用NetworkManager.OnServerAddPlayer。  
     }
-    public void btn1()
-    {
-        chosenCharacter = 0;
-        Debug.Log(0);
-    }
 
-    public void btn2()
-    {
-        chosenCharacter = 1;
-        Debug.Log(1);
-    }
-    
 }
